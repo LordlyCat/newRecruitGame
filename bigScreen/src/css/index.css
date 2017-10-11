@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'HKHB';
+    src: url('../font/华康海报体W12(1)/华康海报体W12.ttf');
+    font-style: normal;
+    font-weight: normal;
+}
+
+
+body {
+    min-width: 1440px;
+}
+
+.mainBody {
+    width: 100%;
+    background: url(../img/background.png) no-repeat;
+    background-size: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.topWrapper {
+    width: 100%;
+    height: 15%;
+    margin-top: 3%;
+    margin-left: 2.3%;
+}
+
+.title {
+    display: inline-block;
+    width: 76%;
+    height: 100%;
+    margin-left: 100%;
+}
+
+.movingTitle {
+    display: inline-block;
+    width: 76%;
+    height: 100%;
+    margin-left: 9%;
+    transition: margin-left 2s;
+}
+
+.logo {
+    display: inline-block;
+    width: 15%;
+    height: 100%;
+    z-index: 10000;
+}
+
+.logo img {
+    width: 100%;
+    float: left;
+    margin-left: 12%;
+    margin-top: -13%;
+}
+
+.words {
+    display: inline-block;
+    width: 82%;
+    height: 100%;
+    background: url(../img/title.png) no-repeat;
+    background-size: 100%;
+}
+
+img.music {
+    width: 8%;
+    float: right;
+    margin-top: -7.4%;
+    margin-right: 5.5%;
+    cursor: pointer;
+}
+
+.num {
+	position: absolute;
+    font-family: 'HKHB';
+    font-size: 2vw;
+    color: white;
+    top: 25%;
+    left: 72.5%;
+}
+
+.num span{
+	color: yellow;
+}
+
+.QRcode {
+    width: 23%;
+    display: inline-block;
+    float: left;
+    margin-left: -2.2%;
+    margin-top: 1%;
+}
+
+.leftHead {
+    display: inline-block;
+    float: left;
+    width: 27%;
+    height: 35%;
+    margin-left: 14%;
+    margin-top: 5.3%;
+}
+
+.QRcode img {
+    width: 100%;
+}
+
+.head {
+    display: inline-block;
+    /*float: right;*/
+    width: 25%;
+    height: 45%;
+    background: yellow;
+    margin-left: 5.5%;
+    margin-top: 5%;
+    background: url(../img/head.png) no-repeat;
+    background-size: 84%;
+    overflow: hidden;
+}
+
+.head img {
+    width: 73%;
+}
+
+.leftHead .head:nth-child(4) {
+    margin-left: 9.3%;
+}
+
+.head img {
+    margin-left: 4.8%;
+    margin-top: 6%;
+    border-radius: 50%;
+}
+
+.rightHead {
+    display: inline-block;
+    float: right;
+    width: 27%;
+    height: 35%;
+    margin-right: 10.4%;
+    margin-top: 4.7%;
+}
+
+.rightHead .head:nth-child(4) {
+    margin-left: -4.3%;
+}
+
+.rightHead .head:nth-child(1) {
+    margin-left: 0;
+}
+
+.btn {
+    width: 20.5%;
+    float: left;
+    overflow: hidden;
+    margin-left: -21.5%;
+    margin-top: 21%;
+    cursor: pointer;
+}
+
+.btn img {
+    width: 100%;
+}
+
+.UFO {
+    position: absolute;
+    width: 0.5%;
+    top: -23%;
+    left: -26%;
+}
+
+.UFO img,
+.movingUFO img {
+    width: 100%;
+}
+
+.movingUFO {
+    position: absolute;
+    width: 7.5%;
+    top: 23%;
+    left: 26%;
+    transition: width 3s, top 2s, left 3s;
+}
+
+.UFO img,
+.UFO img {
+    width: 100%;
+}
+
+
+
+
+
+/*The end*/
