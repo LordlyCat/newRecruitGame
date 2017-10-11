@@ -52,14 +52,14 @@ body{
 .redRock{
     position: absolute;
     width: 100%;
-    top: 72%;
-    opacity: 0.8;
+    top: 67%;
+    opacity: 0.1;
 }
 
 .redRock img{
     position: absolute;
     width: 72%;
-    top: 30%;
+    top: 20%;
     left: 14%;
 }
 
@@ -69,8 +69,6 @@ img.astronaut{
     top: 89%;
     left: 46%;
 }
-
-
 
 
 .btnWrapper{

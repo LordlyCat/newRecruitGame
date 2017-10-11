@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.mainBodyWrapper {
+	overflow: hidden;
+	position: relative;
+    width: 100%;
+    background: url(../img/playBackground_0.png) no-repeat;
+    background-size: 100%;
+}
+
+.topTitle{
+	width: 30%;
+	margin:0 auto;
+	margin-top: 0.5%;
+}
+
+.topTitle .title{
+	width: 100%;
+}
+
+.spaceStation{
+	width: 62%;
+	margin-left: 19%;
+	margin-top:  1.9%;
+}
+
+.spaceStation .station{
+	width: 100%;
+}
+
+.astronaut{
+	width: 7.5%;
+	margin-left: 64%;
+	margin-top: -3.6%;
+}
+
+.astronaut img{
+	width: 100%;
+}
+
+.userHead{
+	height: 11.5%;
+}
+
+.heads{
+	width: 4.6%;
+	height: 100%;
+	float: left;
+	display: inline-block;
+	margin-left: 3.7%;
+	margin-top: 1.6%;
+	background: url(../img/head.png);
+}
+.one{
+	margin-left: 4.9%;
+}
+.two{
+	margin-left: 3.8%;
+}
+
+.four{
+	margin-left: 3.5%;
+}
+.heads img{
+	width: 80%;
+	height: 80%;
+	display: block;
+	margin: 0 auto;
+	margin-top: 7%;
+	border-radius: 50%;
+}
+
+#first{
+	margin-left: 9.1%;
+}

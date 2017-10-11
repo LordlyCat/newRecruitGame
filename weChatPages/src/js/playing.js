@@ -1,9 +1,17 @@
 import '../css/playing.css';
-
+import shine_0 from '../img/shine_0.png';
+import shine_1 from '../img/shine_1.png';
+import shine_2 from '../img/shine_2.png';
+import shine_3 from '../img/shine_3.png';
+import shine_4 from '../img/shine_4.png';
 
 var UFO = document.querySelector('.UFO');
 var order = document.querySelectorAll('.order');
 var redRock = document.querySelector('.redRock');
+var playBtn = document.querySelector('.smallBtn'); 
+var spaceImg = document.querySelector('.space');
+var redRockImg = redRock.querySelector('img');
+
 
 playBtn.addEventListener('touchstart', function() {
     playBtn.className = 'pressSmallBtn';
@@ -25,8 +33,6 @@ setTimeout(function() {
     UFO.style.top = '10%';
 }, 500);
 
-
-
 setInterval(function() {
     if (UFO.style.top === '10%') {
         UFO.style.top = '18%';
@@ -45,6 +51,15 @@ playBtn.addEventListener('touchstart', function () {
     if (clickSpeed >100) {
         clickSpeed = 100;
     }
+    if (clickSpeed >30 && clickSpeed < 50) {
+        redRockImg.src = shine_1;
+    }
+    if (clickSpeed >= 50 && clickSpeed < 80) {
+        redRockImg.src = shine_3;
+    }
+    if (clickSpeed > 80) {
+        redRockImg.src = shine_4;
+    }
     redRock.style.opacity = clickSpeed/100;
 }, false);
 
@@ -56,5 +71,17 @@ setInterval(function () {
     }
     if (clickSpeed < 0) {
         clickSpeed = 0;
+    }
+    if (clickSpeed >30 && clickSpeed < 50) {
+        redRockImg.src = shine_1;
+    }
+    if (clickSpeed >= 50 && clickSpeed < 80) {
+        redRockImg.src = shine_3;
+    }
+    if (clickSpeed > 80) {
+        redRockImg.src = shine_4;
+    }
+    if (clickSpeed <=30) {
+        redRockImg.src = shine_0;
     }
 }, 200);

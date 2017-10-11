@@ -7,18 +7,20 @@ const webpack = require('webpack');
 module.exports = {
     entry: {
         index: './src/js/index.js',
+        count: './src/js/count.js',
+        playing: './src/js/playing.js'
     },
     devtool: 'inline-source-map',
     devServer: {
         contentBase: './dist',
-        port: 5499 //,
+        port: 5566 //,
         //hot: false
     },
     plugins: [
         //new CleanWebpackPlugin(['dist']),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'common',
-            chunks: ['common', 'index', 'second']
+            chunks: ['common', 'index', 'count', 'play']
         }),
         new HtmlWebpackPlugin({
             title: '',
@@ -28,6 +30,32 @@ module.exports = {
             inject: true,
             hash: true,
             chunks: ['common', 'index'],
+            minify: {
+                removeComments: true,
+                collapseWhitespace: true
+            }
+        }),
+        new HtmlWebpackPlugin({
+            title: '',
+            //favicon: './src/favicon.ico',
+            template: path.resolve(__dirname, './src/view/count.html'),
+            filename: './view/count.html',
+            inject: true,
+            hash: true,
+            chunks: ['common', 'count'],
+            minify: {
+                removeComments: true,
+                collapseWhitespace: true
+            }
+        }),
+        new HtmlWebpackPlugin({
+            title: '',
+            //favicon: './src/favicon.ico',
+            template: path.resolve(__dirname, './src/view/playing.html'),
+            filename: './view/playing.html',
+            inject: true,
+            hash: true,
+            chunks: ['common', 'playing'],
             minify: {
                 removeComments: true,
                 collapseWhitespace: true

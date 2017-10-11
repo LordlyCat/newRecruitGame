@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    z-index: 5;
+}
+
+.mainBodyWrapper {
+	position: relative;
+    width: 100%;
+    background: url(../img/countBackground_9.png) no-repeat;
+    background-size: 100%;
+}
+/*.bigUFOWrapper{
+	position: relative;
+    width: 34%;
+    left: 34%;
+    top: 2%;
+    
+}*/
+
+
+img.music{
+	position: absolute;
+	width: 8%;
+	left: 87%;
+	top: 5%;
+	cursor: pointer;
+}
+
+img.bigUFO {
+    width: 1%;
+    left: 94%;
+    top: -2%;
+    /*animation: moving 3.5s;*/
+}
+
+img.movingBigUFO {
+    position: absolute;
+    width: 34%;
+    left: 34%;
+    top: 2%;
+    transition: all 2s;
+    z-index: 10;
+}
+
+img.UFOlight{
+	position: absolute;
+	width: 24%;
+	left: 39%;
+	top: 15%;
+	z-index: 20;
+	opacity: 0;
+}
+
+.ellipse_0{
+	display: none;
+	position: absolute;
+	width: 59%;
+	top: 37.5%;
+	left: 20%;
+	z-index: 300;
+}
+
+.ellipse_1{
+	display: none;
+	position: absolute;
+	width: 39%;
+	top: 46.5%;
+	left: 29%;
+}
+
+
+@-webkit-keyframes moving
+/* Safari and Chrome */
+
+{
+    0% {
+    	top:-2%;
+        left: 70%;
+       	width: 6%;
+    }
+    20% {
+    	top: -1.2%;
+        left: 60%;
+        width: 12%
+    }
+    40% {
+    	top:-0.5%;
+        left: 50%;
+		width: 18%
+    }
+    60% {
+    	top: 0%;
+        left: 45%;
+        width: 25%;
+    }
+    80% {
+    	top: 1%;
+        left: 37%;
+        width: 30%;
+    }
+    100% {
+    	top: 2%;
+        left: 34%;
+        width: 34%
+    }
+}
+
+
+img.littleUFO{
+	position: absolute;
+	width: 8%;
+	top: 20%;
+	left: 43%;
+	opacity: 0;
+}
+
+img.movingLittleUFO{
+	position: absolute;
+	width: 8%;
+	top: 23%;
+	left: 13%;
+	opacity: 1;
+	z-index: 100;
+	transition: all 2s;
+}
+
+img.astronaut{
+	position: absolute;
+	width: 6%;
+	top: 20%;
+	left: 50%;
+	z-index: 10;
+	opacity: 0;
+}
+img.movingAstronaut{
+	position: absolute;
+	width: 6%;
+	top: 55%;
+	left: 59%;
+	z-index: 100;
+	opacity: 1;
+	transition: all 2s;
+}
+
+img.underLight{
+	position: absolute;
+	width: 32%;
+	left: 34%;
+	top: 66%;
+	opacity: 0;
+	transition: opacity 1s;
+	z-index: 150;
+}
+
+img.stateLight{
+	position: absolute;
+	width: 22%;
+	left: 38.6%;
+	top: 45.5%;
+	opacity: 0;
+	transition: opacity 0.5s;
+	z-index: 99999;
+}
+
+img.purpleMeteor{
+	z-index: 1;
+	position: absolute;
+	width: 5%;
+	top: -50%;
+	left: 50%;
+}
+img.movingPurpleMeteor{
+	z-index: 1;
+	position: absolute;
+	width: 5%;
+	top: 100%;
+	left: -10%;
+	transition: all 2s;
+}
+
+img.blueMeteor{
+	z-index: 1;
+	position: absolute;
+	width: 1%;
+	left: 50%;
+	top: -40%;
+}
+img.movingBlueMeteor{
+	position: absolute;
+	width: 6%;
+	top: 100%;
+	left: -10%;
+	transition: all 2s;
+}
+
+img.num{
+	position: absolute;
+	top: 71%;
+	left: 49.2%;
+	width: 0%;
+	z-index: 200;
+}
+
+img.numBigger{
+	position: absolute;
+	top: 38%;
+	left: 44.3%;
+	width: 10.5%;
+	transition: all 0.3s;
+	z-index: 200;
+}
+img.numBigger_1{
+	position: absolute;
+	top: 38%;
+	left: 45.7%;
+	width: 6.0%;
+	z-index: 200;
+}
+
+
+
+img.shine{
+	width: 35.1%;
+	position: absolute;
+	top: 18%;
+	left: 32.2%;
+	opacity: 0;
+	z-index: 30;
+}
+
+img.state{
+	width: 58%;
+	position: absolute;
+	top: 56.3%;
+	left: 21%;
+	z-index: 100;
+}
+
+
+
