@@ -42,6 +42,7 @@ body{
     width: 100%;
     margin-top: 20%;
     /*margin-left: */
+    transition: margin-top 1.5s;
 }
 
 .spaceStation img.space{
@@ -71,8 +72,9 @@ img.astronaut{
 }
 
 .endWords{
-    position: relative;
+    position: fixed;
     width: 100%;
+    top: 55%;
 }
 
 .endWords img.endBoard{

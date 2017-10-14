@@ -1,0 +1,221 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'HKHB';
+    src: url('../font/华康海报体W12(1)/华康海报体W12.ttf');
+    font-style: normal;
+    font-weight: normal;
+}
+
+html{
+	
+}
+
+body {
+    
+}
+
+.wrapper{
+	min-width: 1430px;
+    max-width: 2000px;
+	background: #151886;
+	margin: 0 auto;
+}
+
+.wrapper_0{
+	min-width: 1430px;
+    max-width: 2000px;
+    background: url(../img/end_background.png) no-repeat;
+    background-size: 100%;
+}
+
+.mainWrapper {
+	position: relative;
+    min-width: 1430px;
+    max-width: 2000px;
+    background: url(../img/end_bigPlane.png) no-repeat;
+    background-size: 120%;
+    background-position: 50% 100%;
+}
+
+/*@media screen and (min-width:1400px) and (max-width:1600px) {
+    .mainWrapper {
+        background-size: 120%;
+        background-position: 50% 100%;
+    }
+}
+
+@media screen and (min-width:1700px) and (max-width:1900px) {
+    .mainWrapper {
+        background-size: 120%;
+        background-position: 50% 100%;
+    }
+}
+
+@media screen and (min-width:1900px) and (max-width:2400px) {
+    .mainWrapper {
+        background-size: 120%;
+        background-position: 50% 100%;
+    }
+}*/
+
+img.title {
+	position: fixed;
+    width: 65%;
+    left: 100%;
+    top: 4%;
+}
+
+img.movingTitle{
+	position: fixed;
+    width: 65%;
+    left: 15%;
+    top: 4%;
+    transition: left 2s;
+}
+
+img.music {
+    margin-top: 3%;
+    margin-left: 85%;
+}
+
+.luckyStar {
+    position: relative;
+    width: 39%;
+    margin: 0 auto;
+    margin-top: 4%;
+}
+
+img.lucky {
+    width: 100%;
+}
+
+img.luckyUser {
+    position: absolute;
+    width: 12%;
+    top: 49%;
+    left: 44.5%;
+    border-radius: 50%;
+}
+
+.luckyStar p{
+	display: block;
+	margin: 0 auto;
+	margin-top: -3%;
+	font-family: HKHB;
+	font-size: 1.2vw;
+	color: #f47080;
+	text-align: center;
+}
+
+.otherLucky{
+	width: 62%;
+	margin: 0 auto;
+	margin-top: 2%;
+}
+.littleTitle{
+	margin-left: 3%;
+}
+.userHead{
+	position: relative;
+	display: inline-block;
+	width: 8%;
+	margin-left: 6.2%;
+}
+
+.otherLucky .first{
+	margin-left: 3.5%;
+}
+
+
+.userHead .background{
+	width: 100%;
+}
+
+.userHead .user{
+	position: absolute;
+	width: 85%;
+	margin: 0 auto;
+	border-radius: 50%;
+	top: 7%;
+	left: 8%;
+}
+
+.userHead p{
+	display: block;
+	margin: 0 auto;
+	margin-top: 8%;
+	font-family: HKHB;
+	font-size: 1vw;
+	color: #f47080;
+	text-align: center;
+	
+}
+
+.btn{
+	position: relative;
+	width: 10%;
+	margin: 2% auto;
+}
+
+.btn .blue{
+	width: 100%;
+	z-index: 20;
+}
+
+.btn .yellow{
+	position: absolute;
+	width: 84%;
+	z-index: 5000;
+	top: 13%;
+	left: 7%;
+	cursor: pointer;
+}
+
+.btn .pressYellow{
+	position: absolute;
+	width: 80%;
+	z-index: 5000;
+	top: 15%;
+	left: 8%;
+	cursor: pointer;
+}
+
+img.astronaut{
+	position: absolute;
+	width: 5%;
+	top: 56%;
+	left: 70%;
+}
+
+img.UFO{
+	position: absolute;
+	width: 8%;
+	top: 42%;
+	left: 10%;
+	transition: all 2s;
+}
+
+.blueMeteor{
+	position: absolute;
+	width: 4%;
+	top: 33%;
+	left: 25%;
+}
+
+.purpleMeteor{
+	position: absolute;
+	width: 6%;
+	top: 30%;
+	left: 80%;
+}
+
+.npc{
+	opacity: 0;
+}
+
+

@@ -4,12 +4,24 @@ import num_2 from '../img/num_2.png';
 import num_3 from '../img/num_3.png';
 import num_4 from '../img/num_4.png';
 
+//import test from 'http://img05.tooopen.com/images/20160121/tooopen_sy_155168162826.jpg';
+
+
 var w = document.body.clientWidth;
 var h = document.body.scrollHeight;
 
 //动态设定总体高度
 var mainBodyWrapper = document.querySelector('.mainBodyWrapper');
-mainBodyWrapper.style.height = w / 2.4 + 'px';
+//mainBodyWrapper.style.height = w / 2.4 + 'px';
+var minBodyWrapper = document.querySelector('.minBodyWrapper');
+minBodyWrapper.style.height = w / 2.4 + 'px';
+
+
+
+
+var h = window.screen.availHeight;
+var body = document.querySelector('body');
+mainBodyWrapper.style.height = body.style.height = h - 5 + 'px';
 
 //大UFO动画
 var bigUFO = document.querySelector('.bigUFO');
@@ -23,7 +35,7 @@ setTimeout(function() {
     littleUFO.className = 'movingLittleUFO';
     littleUFO.style.top = '23%';
     moving(littleUFO, '23%', '20%', 1500);
-     
+
 }, 2000);
 
 //宇航员动画
@@ -52,46 +64,58 @@ var stateLight = document.querySelector('.stateLight');
 var shine = document.querySelector('.shine');
 
 
-setTimeout(function () {
-    underLight.style.opacity = 1; 
+setTimeout(function() {
+    underLight.style.opacity = 1;
 }, 1200);
 
-setTimeout(function () {
+setTimeout(function() {
     stateLight.style.opacity = 1;
 }, 1600);
 
-setTimeout(function () {
+setTimeout(function() {
     shine.style.opacity = 1;
 }, 2000);
 
 //数字
 var num = document.querySelector('.num');
-setTimeout(function () {
+setTimeout(function() {
     num.className = 'numBigger';
     var index = 5;
-    setInterval(function () {
-        index -=1;
+    setInterval(function() {
+        index -= 1;
+        num.className = 'num';
         getNumber(index);
     }, 1100);
 }, 5000);
 
-function getNumber (index) {
+function getNumber(index) {
     switch (index) {
         case 4:
             num.src = num_4;
+            setTimeout(function() {
+                num.className = 'numBigger';
+            }, 20);
             break;
         case 3:
+            setTimeout(function() {
+                num.className = 'numBigger';
+            }, 20);
             num.src = num_3;
             break;
         case 2:
+            setTimeout(function() {
+                num.className = 'numBigger';
+            }, 20);
             num.src = num_2;
             break;
         case 1:
+            setTimeout(function() {
+                num.className = 'numBigger_1';
+            }, 20);
             num.src = num_1;
-            num.className = 'numBigger_1';
-            setTimeout(function () {
-                //alert(1);
-            }, 1000);
+            setTimeout(function() {
+                window.location.href = '../view/playing.html' + window.location.search;
+            }, 1200);
             break;
         default:
             // statements_def
@@ -103,10 +127,10 @@ function getNumber (index) {
 //流星
 var purpleMeteor = document.querySelector('.purpleMeteor');
 var blueMeteor = document.querySelector('.blueMeteor');
-setTimeout(function () {
+setTimeout(function() {
     purpleMeteor.className = 'movingPurpleMeteor';
 }, 5000);
 
-setTimeout(function () {
+setTimeout(function() {
     blueMeteor.className = 'movingBlueMeteor';
 }, 8000);

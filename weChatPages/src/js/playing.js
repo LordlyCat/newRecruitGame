@@ -5,6 +5,8 @@ import shine_2 from '../img/shine_2.png';
 import shine_3 from '../img/shine_3.png';
 import shine_4 from '../img/shine_4.png';
 
+import ajax from './Ajax.js';
+
 var UFO = document.querySelector('.UFO');
 var order = document.querySelectorAll('.order');
 var redRock = document.querySelector('.redRock');
@@ -85,3 +87,21 @@ setInterval(function () {
         redRockImg.src = shine_0;
     }
 }, 200);
+
+
+playBtn.addEventListener('touchstart', send, false);
+
+function send () {
+    ajax({
+        url:'',
+        method:"GET",
+    })
+}
+
+
+
+
+
+
+
+//The end

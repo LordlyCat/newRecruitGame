@@ -5,26 +5,61 @@
     z-index: 5;
 }
 
+body{
+	background: #042084;
+	/*overflow: hidden;
+	background: url(../img/countBackground_00.png) no-repeat;
+    background-size: auto 100%;*/
+}
+
 .mainBodyWrapper {
+	min-width: 1440px;
+	overflow: hidden;
 	position: relative;
     width: 100%;
-    background: url(../img/countBackground_9.png) no-repeat;
+    background: url(../img/countBackground_00.png) no-repeat;
     background-size: 100%;
 }
-/*.bigUFOWrapper{
-	position: relative;
-    width: 34%;
-    left: 34%;
-    top: 2%;
-    
-}*/
+.minBodyWrapper{
+	/*float: left;*/
+/*	overflow: hidden;
+*/	position: relative;
+	margin-top: 9%;
+	z-index: 10;
+}
 
+@media screen and (min-width:1500px) and (max-width:1700px) {
+    .minBodyWrapper {
+        margin-top: 10%;
+    }
+}
+
+@media screen and (min-width:1700px) and (max-width:1900px) {
+    .minBodyWrapper {
+        margin-top: 8%;
+    }
+}
+
+@media screen and (min-width:1900px) and (max-width:2400px) {
+    .minBodyWrapper {
+        margin-top: 5%;
+    }
+}
+
+
+img.bigPlane{
+	width: 100%;
+	position: absolute;
+	left: 0%;
+	top: 64.5%;
+	z-index: 1;
+}
 
 img.music{
 	position: absolute;
 	width: 8%;
 	left: 87%;
-	top: 5%;
+	top: -15%;
 	cursor: pointer;
 }
 
@@ -217,6 +252,7 @@ img.numBigger_1{
 	left: 45.7%;
 	width: 6.0%;
 	z-index: 200;
+	transition: all 0.3s;
 }
 
 

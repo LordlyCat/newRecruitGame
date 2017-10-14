@@ -4,15 +4,34 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'HKHB';
+    src: url('../font/华康海报体W12(1)/华康海报体W12.ttf');
+    font-style: normal;
+    font-weight: normal;
+}
+
+html{
+
+}
+body{
+	overflow: hidden;
+	background: url(../img/bigBackground_0.jpg) no-repeat;
+    background-size: auto 100%;
+    background-position: 0%;
+}
+
 .mainBodyWrapper {
+	min-width: 1430px;
+	margin-top: 3%;
 	overflow: hidden;
 	position: relative;
     width: 100%;
-    background: url(../img/playBackground_0.png) no-repeat;
-    background-size: 100%;
+    z-index: 30;
 }
 
 .topTitle{
+	position: relative;
 	width: 30%;
 	margin:0 auto;
 	margin-top: 0.5%;
@@ -22,20 +41,100 @@
 	width: 100%;
 }
 
-.spaceStation{
-	width: 62%;
-	margin-left: 19%;
-	margin-top:  1.9%;
+.progress{
+	position: absolute;
+	top: 25%;
+	left: 76%;
+	color: yellow;
+	font-family: HKHB;
+	font-size: 2vw;
+	line-height: 140%;
+	text-align-last: left;
 }
 
-.spaceStation .station{
+img.UFO{
+	position: absolute;
+	width: 0%;
+	top: 3%;
+	left: 10%;
+	transition: all 2s;
+}
+
+img.movingUFO{
+	position: absolute;
+	width: 8%;
+	top: 21%;
+	left: 10%;
+	transition: all 2s;
+}
+
+.spaceStation{
+	position: relative;
+	width: 62%;
+	margin-left: -60%;
+	margin-top:  -9.9%;
+	/*transition: margin-left 2s, margin-top 2s;*/
+}
+
+.movingSpaceStation{
+	position: relative;
+	width: 62%;
+	margin-left: 19%;
+	margin-top:  -1.9%;
+	transition: margin-left 4s, margin-top 2s;
+}
+
+#station{
 	width: 100%;
 }
 
+.yellowLight{
+	position: absolute;
+	width: 5%;
+	top: 69%;
+}
+
+
+img.first{
+	left: 8%;
+}
+img.second{
+	left: 19%;
+}
+img.third{
+	left: 77%;
+}
+img.fourth{
+	left: 88%;
+}
+
+img.firstLight{
+	width: 10%;
+	left: 7%;
+	top: 61%;
+}
+
+img.secondLight{
+	width: 10%;
+	top: 61%;
+	left: 17%;
+}
+img.thirdLight{
+	width: 10%;
+	top: 61%;
+	left: 75%;
+}
+img.fourthLight{
+	width: 10%;
+	top: 61%;
+	left: 86%;
+}
+
 .astronaut{
-	width: 7.5%;
-	margin-left: 64%;
-	margin-top: -3.6%;
+	position: absolute;
+	width: 11.5%;
+	margin-left: 74%;
+	margin-top: -5.6%;
 }
 
 .astronaut img{
@@ -43,17 +142,22 @@
 }
 
 .userHead{
-	height: 11.5%;
+	position: absolute;
+	width: 90%;
+	height: 9.6%;
+	top: 66%;
+	left: 4.5%;
 }
 
 .heads{
-	width: 4.6%;
+	width: 5.0%;
 	height: 100%;
 	float: left;
 	display: inline-block;
 	margin-left: 3.7%;
-	margin-top: 1.6%;
-	background: url(../img/head.png);
+	margin-top: 1.2%;
+	background: url(../img/head_99.png) no-repeat;
+	background-size: 100%;
 }
 .one{
 	margin-left: 4.9%;
@@ -66,14 +170,184 @@
 	margin-left: 3.5%;
 }
 .heads img{
-	width: 80%;
-	height: 80%;
+	width: 65%;
+	height: 60%;
 	display: block;
 	margin: 0 auto;
-	margin-top: 7%;
+	margin-top: 15%;
 	border-radius: 50%;
 }
 
 #first{
 	margin-left: 9.1%;
+}
+
+.bigPlane{
+	position: absolute;
+	width: 100%;
+	margin-top: -20%;
+	z-index: 0;
+}
+
+.redRock{
+	position: absolute;
+	width: 37%;
+	top: 61.5%;
+	left: 32.5%;
+	z-index: 999;
+}
+
+hr{
+	position: absolute;
+	width: 100%;
+	z-index: 99999999;
+	color: white;
+}
+
+hr.top{
+	top: 64.5%;
+}
+
+hr.buttom{
+	top: 85%;
+}
+.rock{
+	width: 100%;
+	top: 0;
+	z-index: 999;
+}
+
+.redRock_1{
+	position: absolute;
+	width: 36.8%;
+	top: 62.5%;
+	left: 32.525%;
+	z-index: 999;
+}
+
+.redRock_2{
+	position: absolute;
+	width: 38.8%;
+	top: 59.8%;
+	left: 31.44%;
+	z-index: 999;
+}
+
+.redRock_3{
+	position: absolute;
+	width: 40.4%;
+	top: 57.0%;
+	left: 30.59%;
+	z-index: 999;
+}
+
+.redRock_4{
+	position: absolute;
+	width: 42.60%;
+	top: 54.0%;
+	left: 29.44%;
+	z-index: 999;
+}
+
+.redRock_5{
+	position: absolute;
+	width: 44.55%;
+	top: 50.7%;
+	left: 28.53%;
+	z-index: 999;
+}
+
+.redRock_6{
+	position: absolute;
+	width: 46.3%;
+	top: 47.7%;
+	left: 27.6%;
+	z-index: 999;
+}
+
+.redRock_7{
+	position: absolute;
+	width: 47.9%;
+	top: 45.3%;
+	left: 26.73%;
+	z-index: 999;
+}
+
+.redRock_8{
+	position: absolute;
+	width: 49.9%;
+	top: 42.3%;
+	left: 25.7%;
+	z-index: 999;
+}
+
+.redRock_9{
+	position: absolute;
+	width: 51.9%;
+	top: 39%;
+	left: 24.7%;
+	z-index: 999;
+}
+
+.redRock_10{
+	position: absolute;
+	width: 53.50%;
+	top: 36.5%;
+	left: 23.9%;
+	z-index: 999;
+}
+
+
+.under{
+	display: block;
+	overflow: hidden;
+	position: absolute;
+	top: 63%;
+	left: 33%;
+	width: 0%;
+	height: 22%;
+	background: linear-gradient(to bottom, #ff93a0, #ec6173);
+	z-index: 9;
+	transition: width 0.5;
+}
+
+.under img{
+	height: 100%;
+	opacity: 0;
+}
+
+@media screen and (min-width:1400px) and (max-width:1550px) {
+    .bigPlane {
+        margin-top: -21%;
+    }
+    .movingSpaceStation{
+    	margin-top: 6%;
+    }
+}
+
+@media screen and (min-width:1550px) and (max-width:1700px) {
+    .bigPlane {
+        margin-top: -19%;
+    }
+    .movingSpaceStation{
+    	margin-top: 4%;
+    }
+}
+
+@media screen and (min-width:1700px) and (max-width:1900px) {
+    .bigPlane {
+        margin-top: -17%;
+    }
+    .movingSpaceStation{
+    	margin-top: 2%;
+    }
+}
+
+@media screen and (min-width:1900px) and (max-width:2400px) {
+    .bigPlane {
+        margin-top: -15%;
+    }
+    .movingSpaceStation{
+    	margin-top: 1.8%;
+    }
 }

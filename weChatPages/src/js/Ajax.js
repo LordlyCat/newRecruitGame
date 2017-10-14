@@ -63,7 +63,7 @@ function ajax( opts ) {
 
 };
 
-//module.exports = ajax;
+module.exports = ajax;
 
 
 //The end

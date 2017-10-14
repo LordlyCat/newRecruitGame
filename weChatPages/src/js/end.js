@@ -5,6 +5,8 @@ import shine_2 from '../img/shine_2.png';
 import shine_3 from '../img/shine_3.png';
 import shine_4 from '../img/shine_4.png';
 
+import ajax from './Ajax.js';
+
 var UFO = document.querySelector('.UFO');
 
 setTimeout(function() {
@@ -12,7 +14,18 @@ setTimeout(function() {
     UFO.style.top = '6%';
 }, 500);
 
+var spaceStation = document.querySelector('.spaceStation');
+spaceStation.style.marginTop = '20%';
 
+
+
+setInterval(function() {
+    if (spaceStation.style.marginTop === '20%') {
+        spaceStation.style.marginTop = '23%';
+    } else if (spaceStation.style.marginTop === '23%') {
+        spaceStation.style.marginTop = '20%';
+    }
+}, 1000);
 
 setTimeout(function() {
     setInterval(function() {
@@ -28,9 +41,9 @@ function changeImg(index) {
     //var src = null;
 
     switch (index) {
-        case 0:
-            shineImg.src = shine_0;
-            break;
+        // case 0:
+        //     shineImg.src = shine_0;
+        //     break;
         case 1:
             shineImg.src = shine_1;
             break;
@@ -68,7 +81,7 @@ setInterval(function() {
         flag = true;
     }
     changeImg(index);
-}, 100);
+}, 300);
 
 //button
 var backBtn = document.querySelector('.yellowBtn');
@@ -82,3 +95,15 @@ backBtn.addEventListener('click', function() {
         backBtn.className = 'yellowBtn';
     }, 200);
 }, false);
+
+// ajax({
+//     url: '',
+//     method: 'GET',
+//     success:function (data) {
+//         console.log(data);
+//     }
+// })
+
+ajax();
+
+//The end

@@ -8,7 +8,8 @@ module.exports = {
     entry: {
         index: './src/js/index.js',
         count: './src/js/count.js',
-        playing: './src/js/playing.js'
+        playing: './src/js/playing.js',
+        end: './src/js/end.js'
     },
     devtool: 'inline-source-map',
     devServer: {
@@ -56,6 +57,19 @@ module.exports = {
             inject: true,
             hash: true,
             chunks: ['common', 'playing'],
+            minify: {
+                removeComments: true,
+                collapseWhitespace: true
+            }
+        }),
+        new HtmlWebpackPlugin({
+            title: '',
+            //favicon: './src/favicon.ico',
+            template: path.resolve(__dirname, './src/view/end.html'),
+            filename: './view/end.html',
+            inject: true,
+            hash: true,
+            chunks: ['common', 'end'],
             minify: {
                 removeComments: true,
                 collapseWhitespace: true
