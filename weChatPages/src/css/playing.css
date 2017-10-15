@@ -7,7 +7,7 @@
 body{
     position: relative;
     background: url(../img/playingBackground.png) no-repeat;
-    background-size: 100%;
+    background-size: 100% auto;
     overflow: hidden;
 }
 

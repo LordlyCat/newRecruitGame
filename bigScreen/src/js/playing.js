@@ -224,7 +224,8 @@ var percentage = 0, //游戏进度
     onlineNumber, //初始在线人数
     targetClickNumber; //目标点击量
 
-var ws = new WebSocket('ws://wx.idsbllp.cn/gavagame/cet/game?type=1');
+var url = 'ws://wx.idsbllp.cn/gavagame/cet/game' + window.location.search;
+var ws = new WebSocket(url);
 
 //获取服务端消息
 ws.addEventListener('message', getMessage, false);
@@ -236,41 +237,49 @@ ws.addEventListener('error', getError, false);
 
 function getMessage(event) {
     var data = event.data;
-    console.log(data);
+    var dataObj = JSON.parse(data);
+    console.log(dataObj);
 
-    // onlineNumber = ;
-    // targetClickNumber = onlineNumber * average;
-    // clickNumber = ;
-    // percentage = (clickNumber / targetClickNumber);
-    // if (percentage >= 1) {
-    //         percentage = 1;
-    //         setTimeout(function() {
-    //             window.location.href = '../view/end.html' + window.location.search;
-    //         }, 10000);
-    // }
-    // percent.innerHTML = parseInt(percentage * 100) + '%';
-    // under.style.width = 36 * percentage + '%';
+    onlineNumber = dataObj.count;
+    targetClickNumber = onlineNumber * average;
+    clickNumber = dataObj.clickCount;
+    percentage = (clickNumber / targetClickNumber);
 
-    // for (var i = 0; i < users.length; i++) {
-    //     users[i].src = 'http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKDhS1ALib4eSBFnzHhT9bsXCLKYhOhricqvNuFf126nQ8RUkMFxMzO8rWFh62n5kMPgTgg30ibcJZ4Q/0';
-    // }
+    if (percentage >= 1) {
+        percentage = 1;
+        under.style.display = 'none';
+        shineWords();
+        setTimeout(function() {
+            ws.onclose = function() {
+                console.log('connect closed');
+            };
+            window.location.href = '../view/end.html' + window.location.search;
+        }, 10000);
+    }
+    percent.innerHTML = parseInt(percentage * 100) + '%';
+    under.style.width = 36 * percentage + '%';
 
-    // if (percentage >= 0.25) {
-    //     yellowLight[0].className = 'yellowLight firstLight';
-    //     yellowLight[0].src = yellowLight_0;
-    // }
-    // if (percentage >= 0.5) {
-    //     yellowLight[1].className = 'yellowLight secondLight';
-    //     yellowLight[1].src = yellowLight_0;
-    // }
-    // if (percentage >= 0.75) {
-    //     yellowLight[2].className = 'yellowLight thirdLight';
-    //     yellowLight[2].src = yellowLight_0;
-    // }
-    // if (percentage >= 0.95) {
-    //     yellowLight[3].className = 'yellowLight fourthLight';
-    //     yellowLight[3].src = yellowLight_0;
-    // }
+    for (var i = 0; i < users.length; i++) {
+        users[i].src = dataObj.list[i].headimgurl;
+        //users[i].src = 'http://old.cicphoto.com/newcicsite/syxy/tj/201408/W020140827418493810536.jpg'
+    }
+
+    if (percentage >= 0.25) {
+        yellowLight[0].className = 'yellowLight firstLight';
+        yellowLight[0].src = yellowLight_0;
+    }
+    if (percentage >= 0.5) {
+        yellowLight[1].className = 'yellowLight secondLight';
+        yellowLight[1].src = yellowLight_0;
+    }
+    if (percentage >= 0.75) {
+        yellowLight[2].className = 'yellowLight thirdLight';
+        yellowLight[2].src = yellowLight_0;
+    }
+    if (percentage >= 0.95) {
+        yellowLight[3].className = 'yellowLight fourthLight';
+        yellowLight[3].src = yellowLight_0;
+    }
 
     movingSpeed = percentage / 2 + 0.1;
 }
@@ -292,12 +301,37 @@ function getError(event) {
 function save() {
     setInterval(function() {
         percentage += 0.006;
+
+        if (percentage >= 0.25) {
+            yellowLight[0].className = 'yellowLight firstLight';
+            yellowLight[0].src = yellowLight_0;
+        }
+        if (percentage >= 0.5) {
+            yellowLight[1].className = 'yellowLight secondLight';
+            yellowLight[1].src = yellowLight_0;
+        }
+        if (percentage >= 0.75) {
+            yellowLight[2].className = 'yellowLight thirdLight';
+            yellowLight[2].src = yellowLight_0;
+        }
+        if (percentage >= 0.95) {
+            yellowLight[3].className = 'yellowLight fourthLight';
+            yellowLight[3].src = yellowLight_0;
+        }
+
         if (percentage > 1) {
             percentage = 1;
+            under.style.display = 'none';
+            shineWords();
             setTimeout(function() {
                 window.location.href = '../view/end.html' + window.location.search;
             }, 10000);
+
+            ws.onclose = function() {
+                console.log('connect closed');
+            };
         }
+        
         under.style.width = 36 * percentage + '%';
         movingSpeed = percentage / 2 + 0.1;
         percent.innerHTML = parseInt(percentage * 100) + '%';
@@ -310,10 +344,13 @@ function save() {
 }
 
 
+window.onunload = function() {
+    ws.onclose = function() {
+        console.log('Connection closed');
+    };
+}
 
-
-
-
+save();
 
 
 

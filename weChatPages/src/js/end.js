@@ -94,7 +94,12 @@ backBtn.addEventListener('click', function() {
     setTimeout(function() {
         backBtn.className = 'yellowBtn';
     }, 200);
+    setTimeout(function() {
+        window.location.href = '../view/index.html' + window.location.search;
+    }, 300);
+
 }, false);
+
 
 // ajax({
 //     url: '',
@@ -104,6 +109,21 @@ backBtn.addEventListener('click', function() {
 //     }
 // })
 
-ajax();
+console.log(localStorage.clickNUm);
+
+var thank = document.querySelector('.thankWords');
+
+thank.innerHTML = '恭喜你在“造梦红岩”游戏中，协同其他同学一起完成了红岩梦的点亮，' +
+    '你一共为造梦计划点击了' + localStorage.clickNUm + '次，感谢你的参与！';
+
+
+
+
+
+
+
+
+
+
 
 //The end

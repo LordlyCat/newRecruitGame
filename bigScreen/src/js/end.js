@@ -74,47 +74,63 @@ smallPrizeName[2].style.opacity = smallPrizeName[3].style.opacity = 0;
 
 btn.addEventListener('click', prizeDraw, false);
 var time = 0;
+var url = 'https://wx.idsbllp.cn/gavagame/cet/luck' + window.location.search;
+
+var dataObj;
 
 function prizeDraw() {
     time++;
+
     if (time === 1) {
+
         ajax({
-            url: '',
+            url: url,
             method: 'GET',
             success: function(data) {
                 console.log(data);
-
-                // bigPrizeHead.src = ;
-                // bigPrizeName.innerHTML = ;
-                
+                dataObj = JSON.parse(data);
+                bigPrizeHead.src = dataObj.data[0].headimgurl;
+                bigPrizeName.innerHTML = dataObj.data[0].nickname;
             },
             error: function(data) {
                 console.log(data);
             }
-        })
+        });
+
+
+        //bigPrizeHead.src = dataObj.data[0].headimgurl;
+        //bigPrizeName.innerHTML = dataObj.data[0].nickname;
+
+        // 
+        // $.ajax({
+        //     url: url,
+        //     type: 'GET',
+        //     contentType: 'application/json',
+        //     dataType: "JSONP",
+        //     success: function(data) {
+        //         console.log(data);
+        //         var dataObj = JSON.parse(data);
+
+        //         bigPrizeHead.src = dataObj.data[0].headimgurl;
+        //         bigPrizeName.innerHTML = dataObj.data[0].nickname;
+        //     },
+        //     error: function(data) {
+        //         console.log(data);
+        //     }
+
+        // });
     }
     if (time === 2) {
-        ajax({
-            url: '',
-            method: 'GET',
-            success: function(data) {
-                console.log(data);
 
-                // for (var i = 0; i < smallPrizeHead.length; i++) {
-                //     smallPrizeHead[i].src = ;
-                //     smallPrizeName[i].innerHTML = ;
-                // }
-                
+        for (var i = 0; i < smallPrizeHead.length; i++) {
+            smallPrizeHead[i].src = dataObj.data[i + 1].headimgurl;
+            smallPrizeName[i].innerHTML = dataObj.data[i + 1].nickname;
+        }
 
 
-                smallPrizeName[0].style.opacity = smallPrizeName[1].style.opacity = 1;
-                smallPrizeName[2].style.opacity = smallPrizeName[3].style.opacity = 1;
-            },
-            error: function(data) {
-                console.log(data);
-            }
+        smallPrizeName[0].style.opacity = smallPrizeName[1].style.opacity = 1;
+        smallPrizeName[2].style.opacity = smallPrizeName[3].style.opacity = 1;
 
-        })
     }
 }
 

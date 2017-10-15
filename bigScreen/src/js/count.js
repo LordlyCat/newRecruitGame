@@ -6,17 +6,19 @@ import num_4 from '../img/num_4.png';
 
 //import test from 'http://img05.tooopen.com/images/20160121/tooopen_sy_155168162826.jpg';
 
-
 var w = document.body.clientWidth;
 var h = document.body.scrollHeight;
+var music = document.querySelector('audio');
+
+setTimeout(function () {
+    music.play();
+}, 3000);
 
 //动态设定总体高度
 var mainBodyWrapper = document.querySelector('.mainBodyWrapper');
 //mainBodyWrapper.style.height = w / 2.4 + 'px';
 var minBodyWrapper = document.querySelector('.minBodyWrapper');
 minBodyWrapper.style.height = w / 2.4 + 'px';
-
-
 
 
 var h = window.screen.availHeight;
@@ -85,7 +87,7 @@ setTimeout(function() {
         index -= 1;
         num.className = 'num';
         getNumber(index);
-    }, 1100);
+    }, 1800);
 }, 5000);
 
 function getNumber(index) {
@@ -115,10 +117,10 @@ function getNumber(index) {
             num.src = num_1;
             setTimeout(function() {
                 window.location.href = '../view/playing.html' + window.location.search;
-            }, 1200);
+            }, 3000);
             break;
         default:
-            // statements_def
+             num.className = 'numBigger_1';
             break;
     }
 }

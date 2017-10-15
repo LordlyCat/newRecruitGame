@@ -12,6 +12,10 @@ body{
     background-size: auto 100%;*/
 }
 
+audio{
+	display: none;
+}
+
 .mainBodyWrapper {
 	min-width: 1440px;
 	overflow: hidden;
@@ -61,6 +65,7 @@ img.music{
 	left: 87%;
 	top: -15%;
 	cursor: pointer;
+	opacity: 0;
 }
 
 img.bigUFO {

@@ -4,10 +4,17 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'HKHB';
+    src: url('../font/华康海报体W12(1)/华康海报体W12.ttf');
+    font-style: normal;
+    font-weight: normal;
+}
+
 body{
     position: relative;
     background: url(../img/endBackground.png) no-repeat;
-    background-size: 100%;
+    background-size: 100% auto;
     overflow: hidden;
 }
 
@@ -89,6 +96,10 @@ img.astronaut{
     height: 100px;
     top: 23%;
     left: 14%;
+    font-family: HKHB;
+    font-size: 4.3vw;
+    color: #ee9f78;
+    line-height: 6vw;
 }
 
 .backBtn{
@@ -104,8 +115,8 @@ img.blueBtn{
 
 .yellowBtn{
     position: absolute;
-    width: 92%;
-    background: url(../img/backYellowBtn.png) no-repeat;
+    width: 90%;
+    background: url(../img/back.png) no-repeat;
     background-size: 100% 100%;
     z-index: 1000;
     margin-top: -43%;

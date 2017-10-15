@@ -72,29 +72,33 @@ module.exports = {
 
     module: {
         rules: [{
-            test: /\.css$/,
-            use: [
-                'style-loader',
-                'css-loader'
-            ]
-        }, {
-            test: /\.html$/,
-            use: 'html-withimg-loader'
-        }, {
-            test: /\.(png|jpg)$/,
-            use: 'url-loader?limit=20480'
-        }, {
-            test: /\.((woff2?|svg)(\?v=[0-9]\.[0-9]\.[0-9]))|(woff2?|svg|jpe?g|png|gif|ico)$/,
-            use: [
-                //'url?limit=51200&name=img/[hash:8].[name].[ext]',
-                //'src/img?{bypassOnDebug:true, progressive:true,optimizationLevel:3,pngquant:{quality:"65-80",speed:4}}'
-            ]
-        }, {
-            test: /\.(woff|woff2|eot|ttf|otf)$/,
-            use: [
-                'file-loader'
-            ]
-        }]
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader'
+                ]
+            }, {
+                test: /\.html$/,
+                use: 'html-withimg-loader'
+            }, {
+                test: /\.(png|jpg)$/,
+                use: 'url-loader?limit=20480'
+            }, {
+                test: /\.((woff2?|svg)(\?v=[0-9]\.[0-9]\.[0-9]))|(woff2?|svg|jpe?g|png|gif|ico)$/,
+                use: [
+                    //'url?limit=51200&name=img/[hash:8].[name].[ext]',
+                    //'src/img?{bypassOnDebug:true, progressive:true,optimizationLevel:3,pngquant:{quality:"65-80",speed:4}}'
+                ]
+            }, {
+                test: /\.mp3$/,
+                use: 'file-loader'
+            },{
+                test: /\.(woff|woff2|eot|ttf|otf)$/,
+                use: [
+                    'file-loader'
+                ]
+            }
+        ]
     }
 
 };
