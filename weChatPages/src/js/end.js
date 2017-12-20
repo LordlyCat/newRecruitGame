@@ -15,15 +15,15 @@ setTimeout(function() {
 }, 500);
 
 var spaceStation = document.querySelector('.spaceStation');
-spaceStation.style.marginTop = '20%';
+spaceStation.style.marginTop = '10%';
 
 
 
 setInterval(function() {
-    if (spaceStation.style.marginTop === '20%') {
-        spaceStation.style.marginTop = '23%';
-    } else if (spaceStation.style.marginTop === '23%') {
-        spaceStation.style.marginTop = '20%';
+    if (spaceStation.style.marginTop === '10%') {
+        spaceStation.style.marginTop = '13%';
+    } else if (spaceStation.style.marginTop === '13%') {
+        spaceStation.style.marginTop = '10%';
     }
 }, 1000);
 
@@ -112,9 +112,10 @@ backBtn.addEventListener('click', function() {
 console.log(localStorage.clickNUm);
 
 var thank = document.querySelector('.thankWords');
+var times = parseInt(localStorage.clickNUm) + parseInt(Math.random() * 10)
 
 thank.innerHTML = '恭喜你在“造梦红岩”游戏中，协同其他同学一起完成了红岩梦的点亮，' +
-    '你一共为造梦计划点击了' + localStorage.clickNUm + '次，感谢你的参与！';
+    '你一共为造梦计划点击了' + times + '次，感谢你的参与！';
 
 
 

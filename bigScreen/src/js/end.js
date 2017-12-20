@@ -74,7 +74,7 @@ smallPrizeName[2].style.opacity = smallPrizeName[3].style.opacity = 0;
 
 btn.addEventListener('click', prizeDraw, false);
 var time = 0;
-var url = 'https://wx.idsbllp.cn/gavagame/cet/luck' + window.location.search;
+var url = 'https://wx.idsbllp.cn/gavagame/game2017/master/endgame' + window.location.search;
 
 var dataObj;
 

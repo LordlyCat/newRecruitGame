@@ -1,4 +1,6 @@
 import '../css/playing.css';
+import ajax from './Ajax.js';
+
 import shine_1 from '../img/shineRedRock_1.png';
 import shine_2 from '../img/shineRedRock_2.png';
 import shine_3 from '../img/shineRedRock_3.png';
@@ -224,20 +226,31 @@ var percentage = 0, //游戏进度
     onlineNumber, //初始在线人数
     targetClickNumber; //目标点击量
 
-var url = 'ws://wx.idsbllp.cn/gavagame/cet/game' + window.location.search;
-var ws = new WebSocket(url);
+// var url = 'ws://wx.idsbllp.cn/gavagame/cet/game' + window.location.search;
+// var ws = new WebSocket(url);
 
 //获取服务端消息
-ws.addEventListener('message', getMessage, false);
+// ws.addEventListener('message', getMessage, false);
 
-ws.addEventListener('open', open, false);
+// ws.addEventListener('open', open, false);
 
-ws.addEventListener('error', getError, false);
+// ws.addEventListener('error', getError, false);
 
+var loopGet = setInterval(getMessageAjax, 300);
 
-function getMessage(event) {
-    var data = event.data;
+function getMessageAjax () {
+    ajax({
+        method: 'GET',
+        url: 'https://wx.idsbllp.cn/gavagame/game2017/master/game',
+        succeess: getMessage,
+        error: save
+    })
+}
+
+function getMessage(data) {
+    //var data = event.data;
     var dataObj = JSON.parse(data);
+    
     console.log(dataObj);
 
     onlineNumber = dataObj.count;

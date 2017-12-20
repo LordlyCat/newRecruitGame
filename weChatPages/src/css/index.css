@@ -8,6 +8,7 @@ body{
     position: relative;
     background: url(../img/background.png) no-repeat;
     background-size: 100% auto;
+    background-position: 0 10%;
 }
 
 .mainBody{
@@ -49,7 +50,7 @@ body{
     position: relative;
     width: 50%;
     margin-left: 25%;
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
 .btnWrapper img.order{

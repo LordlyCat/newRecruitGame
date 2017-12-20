@@ -29,7 +29,7 @@ body{
 .UFO{
     position: absolute;
     width: 1%;
-    top: -7%;
+    top: -2%;
     left: -6%;
     transition: width 2.5s;
 }
@@ -47,7 +47,7 @@ body{
 .spaceStation{
     position: relative;
     width: 100%;
-    margin-top: 20%;
+    margin-top: -10%;
     /*margin-left: */
     transition: margin-top 1.5s;
 }

@@ -94,7 +94,7 @@ setInterval(function() {
 
 playBtn.addEventListener('touchstart', clickSend, false);
 
-var url = 'https://wx.idsbllp.cn/gavagame/cet/user/click' + window.location.search;
+var url = 'https://wx.idsbllp.cn/gavagame/game2017/user/click' + window.location.search;
 
 var ten = 0;
 

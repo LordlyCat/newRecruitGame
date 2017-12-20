@@ -141,11 +141,14 @@ img.luckyUser {
 	width: 85%;
 	margin: 0 auto;
 	border-radius: 50%;
-	top: 7%;
+	top: 5%;
 	left: 8%;
 }
 
 .userHead p{
+	float: left;
+	height: 50px;
+	word-break: break-all;
 	display: block;
 	margin: 0 auto;
 	margin-top: 8%;

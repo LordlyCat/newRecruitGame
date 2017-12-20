@@ -3,7 +3,7 @@ import '../css/csshake.min.css';
 import '../js/ui.js';
 import ajax from './Ajax.js';
 
-var url = 'https://wx.idsbllp.cn/gavagame/cet/auth/startgame' + window.location.search;
+var url = 'https://wx.idsbllp.cn/gavagame/game2017/user/startgame' + window.location.search;
 
 document.addEventListener('click', function() {
     ajax({
