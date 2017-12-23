@@ -3,7 +3,7 @@ import '../css/csshake.min.css';
 import '../js/ui.js';
 import ajax from './Ajax.js';
 
-var url = 'https://wx.idsbllp.cn/gavagame/game2017/user/startgame' + window.location.search;
+var url = 'http://wx.yyeke.com/171215game/user/startgame' + window.location.search;
 
 document.addEventListener('click', function() {
     ajax({
@@ -21,3 +21,14 @@ document.addEventListener('click', function() {
         }
     });
 }, false);
+
+
+window.onload = function () {
+    setInterval(function () {
+         window.scrollTo(0,document.body.scrollHeight);
+    }, 10);
+}
+
+// var cover = document.querySelector('.cover');
+
+// cover.style.height = document.documentElement.clientHeight - 2 + 'px';

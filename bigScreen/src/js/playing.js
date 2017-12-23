@@ -236,21 +236,21 @@ var percentage = 0, //游戏进度
 
 // ws.addEventListener('error', getError, false);
 
-var loopGet = setInterval(getMessageAjax, 300);
+var loopGet = setInterval(getMessageAjax, 1000);
 
-function getMessageAjax () {
+function getMessageAjax() {
     ajax({
         method: 'GET',
-        url: 'https://wx.idsbllp.cn/gavagame/game2017/master/game',
-        succeess: getMessage,
-        error: save
+        url: 'http://wx.yyeke.com/171215game/master/game',
+        success: getMessage,
+        errors: save
     })
 }
 
 function getMessage(data) {
     //var data = event.data;
     var dataObj = JSON.parse(data);
-    
+
     console.log(dataObj);
 
     onlineNumber = dataObj.count;
@@ -262,19 +262,22 @@ function getMessage(data) {
         percentage = 1;
         under.style.display = 'none';
         shineWords();
+        ajax({//游戏结束
+                url: 'http://wx.yyeke.com/171215game/master/endgame',
+                method: 'GET'
+        })
         setTimeout(function() {
-            ws.onclose = function() {
-                console.log('connect closed');
-            };
+            // ws.onclose = function() {
+            //     console.log('connect closed');
+            // };
             window.location.href = '../view/end.html' + window.location.search;
-        }, 10000);
+        }, 9000);
     }
     percent.innerHTML = parseInt(percentage * 100) + '%';
     under.style.width = 36 * percentage + '%';
 
     for (var i = 0; i < users.length; i++) {
         users[i].src = dataObj.list[i].headimgurl;
-        //users[i].src = 'http://old.cicphoto.com/newcicsite/syxy/tj/201408/W020140827418493810536.jpg'
     }
 
     if (percentage >= 0.25) {
@@ -336,15 +339,22 @@ function save() {
             percentage = 1;
             under.style.display = 'none';
             shineWords();
+
+            ajax({//游戏结束
+                url: 'http://wx.yyeke.com/171215game/master/endgame',
+                method: 'GET'
+            })
             setTimeout(function() {
                 window.location.href = '../view/end.html' + window.location.search;
-            }, 10000);
+            }, 9000);
 
-            ws.onclose = function() {
-                console.log('connect closed');
-            };
+
+
+            // ws.onclose = function() {
+            //     console.log('connect closed');
+            // };
         }
-        
+
         under.style.width = 36 * percentage + '%';
         movingSpeed = percentage / 2 + 0.1;
         percent.innerHTML = parseInt(percentage * 100) + '%';
@@ -357,13 +367,13 @@ function save() {
 }
 
 
-window.onunload = function() {
-    ws.onclose = function() {
-        console.log('Connection closed');
-    };
-}
+// window.onunload = function() {
+//     ws.onclose = function() {
+//         console.log('Connection closed');
+//     };
+// }
 
-save();
+//save();
 
 
 

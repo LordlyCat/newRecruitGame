@@ -22,16 +22,16 @@ var loopGet = setInterval(getMessage, 1000);
 function getMessage() {
     ajax({
         method: 'GET',
-        url: 'https://wx.idsbllp.cn/gavagame/game2017/master/wait',
+        url: 'http://wx.yyeke.com/171215game/master/wait',
         success: function(data) {
             var dataObj = JSON.parse(data);
             console.log(dataObj);
 
-            // onlineNumber.innerHTML = dataObj.count;
-            // for (var i = 0; i < heads.length; i++) {
-            //     heads[i].childNodes[0].src = dataObj.list[i].headimgurl;
-            //     console.log(dataObj.list[i].headimgurl);
-            // }
+            onlineNumber.innerHTML = dataObj.count;
+            for (var i = 0; i < heads.length; i++) {
+                heads[i].childNodes[0].src = dataObj.list[i].headimgurl;
+                console.log(dataObj.list[i].headimgurl);
+            }
         },
         error: function(data) {
             console.log(data);

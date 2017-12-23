@@ -67,7 +67,8 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'js/[name].bundle.js',
         chunkFilename: 'js/[id].chunk.js',
-        publicPath: '/'
+        //publicPath: '/'
+        publicPath: 'http://wx.yyeke.com/171215game/dist/'
     },
 
     module: {

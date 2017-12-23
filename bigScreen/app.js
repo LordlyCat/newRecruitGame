@@ -14,88 +14,88 @@ var exec = require('child_process').exec;
 var cmdStr = 'PORT=' + serverPort + 'supervisor ./bin/www';
 exec(cmdStr);
 
-var proxy = {
-    //"*": "http://localhost:" + serverPort
-    target: "http://localhost:" + serverPort
-};
+// var proxy = {
+//     //"*": "http://localhost:" + serverPort
+//     target: "http://localhost:" + serverPort
+// };
 
-fs.watch('./src/view/', function() {
-    console.log('yesyesyesyesyesyesyes');
-    //location.reload();
-    exec('webpack', function(err, stdout, stderr) {
-        if (err) {
-            console.log(stderr);
-        } else {
-            console.log(stdout);
-        }
-    });
-});
+// fs.watch('./src/view/', function() {
+//     console.log('yesyesyesyesyesyesyes');
+//     //location.reload();
+//     exec('webpack', function(err, stdout, stderr) {
+//         if (err) {
+//             console.log(stderr);
+//         } else {
+//             console.log(stdout);
+//         }
+//     });
+// });
 
-fs.watch('./src/js/', function() {
-    console.log('yesyesyesyesyesyesyes');
-    //location.reload();
-    exec('webpack', function(err, stdout, stderr) {
-        if (err) {
-            console.log(stderr);
-        } else {
-            console.log(stdout);
-        }
-    });
-});
+// fs.watch('./src/js/', function() {
+//     console.log('yesyesyesyesyesyesyes');
+//     //location.reload();
+//     exec('webpack', function(err, stdout, stderr) {
+//         if (err) {
+//             console.log(stderr);
+//         } else {
+//             console.log(stdout);
+//         }
+//     });
+// });
 
-fs.watch('./src/css/', function() {
-    console.log('yesyesyesyesyesyesyes');
-    //location.reload();
-    exec('webpack', function(err, stdout, stderr) {
-        if (err) {
-            console.log(stderr);
-        } else {
-            console.log(stdout);
-        }
-    });
-});
+// fs.watch('./src/css/', function() {
+//     console.log('yesyesyesyesyesyesyes');
+//     //location.reload();
+//     exec('webpack', function(err, stdout, stderr) {
+//         if (err) {
+//             console.log(stderr);
+//         } else {
+//             console.log(stdout);
+//         }
+//     });
+// });
 
-var compiler = webpack(config);
+// var compiler = webpack(config);
 
 //在源码有更新时，更新模板
-compiler.plugin('emit', function(compilation, cb) {
-    for (var filename in compilation.assets) {
-        if (filename.endsWith('.html')) {
-            var filepath = path.resolve(viewPath, filename)
-            var dirname = path.dirname(filepath)
-            if (!fs.existsSync(dirname)) {
-                mkdir('-p', dirname)
-            }
-            fs.writeFile(filepath, compilation.assets[filename].source())
-        }
-    }
-    cb();
-})
+// compiler.plugin('emit', function(compilation, cb) {
+//     for (var filename in compilation.assets) {
+//         if (filename.endsWith('.html')) {
+//             var filepath = path.resolve(viewPath, filename)
+//             var dirname = path.dirname(filepath)
+//             if (!fs.existsSync(dirname)) {
+//                 mkdir('-p', dirname)
+//             }
+//             fs.writeFile(filepath, compilation.assets[filename].source())
+//         }
+//     }
+//     cb();
+// })
 
-//当页面模板有改变时，强制刷新页面
-compiler.plugin('compilation', function(compilation) {
-    compilation.plugin('html-webpack-plugin-after-emit', function(data, cb) {
-        // todo 刷新浏览器
-        // *
-        //  * 实际项目中，应该使用webpack-dev-middleware和webpack-hot-middleware中间件，
-        //  * 结合node库express/koa等使用。
+// //当页面模板有改变时，强制刷新页面
+// compiler.plugin('compilation', function(compilation) {
+//     compilation.plugin('html-webpack-plugin-after-emit', function(data, cb) {
+//         // todo 刷新浏览器
+//         // *
+//         //  * 实际项目中，应该使用webpack-dev-middleware和webpack-hot-middleware中间件，
+//         //  * 结合node库express/koa等使用。
 
-        console.log(266666666666666666666666);
-        cb()
-    })
-})
+//         console.log(266666666666666666666666);
+//         cb()
+//     })
+// })
 
-var app = new WebpackDevServer(webpack(config), {
-    publicPath: './dist',
-    contentBase: './dist',
-    hot: false,
-    proxy: proxy
-});
+// var app = new WebpackDevServer(webpack(config), {
+//     publicPath: './dist',
+//     contentBase: './dist',
+//     hot: false,
+//     proxy: proxy
+// });
 
 
-app.listen(serverPort, function() {
-    console.log("litsening 2333333333333333");
-});
+// app.listen(serverPort, function() {
+//     console.log("litsening 2333333333333333");
+// });
 
 
 expressApp.use(bodyParser.json());
@@ -104,7 +104,7 @@ expressApp.use(bodyParser.urlencoded({
     extended: false
 }));
 
-expressApp.use(express.static(path.join(__dirname, 'dist/')));
+expressApp.use(express.static(path.join(__dirname, 'dists/')));
 
 expressApp.post('/', function(req, res, next) {
     console.log(req.body);

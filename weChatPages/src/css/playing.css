@@ -4,7 +4,12 @@
     box-sizing: border-box;
 }
 
+html{
+   
+}
+
 body{
+    float: left;
     position: relative;
     background: url(../img/playingBackground.png) no-repeat;
     background-size: 100% auto;
@@ -40,7 +45,7 @@ body{
 .spaceStation{
     position: relative;
     width: 100%;
-    margin-top: 28%;
+    margin-top: 10%;
     /*margin-left: */
 }
 
@@ -74,8 +79,9 @@ img.astronaut{
 .btnWrapper{
     position: relative;
     width: 50%;
+    height: 40vw;
     margin-left: 25%;
-    margin-top: 25%;
+    margin-top: 35%;
 }
 
 .btnWrapper img.order{
@@ -115,16 +121,16 @@ img.astronaut{
 
 .btnWrapper img.smallBtn{
     position: absolute;
-    width: 40%;
-    margin-top: 26%;
-    left: 30%;
+    width: 46%;
+    margin-top: 24%;
+    left: 26%;
 }
 
 .btnWrapper img.pressSmallBtn{
     position: absolute;
-    width: 35%;
-    margin-top: 30%;
-    left: 32%;
+    width: 43%;
+    margin-top: 27%;
+    left: 27%;
 }
 
 

@@ -14,7 +14,7 @@
 body{
     position: relative;
     background: url(../img/endBackground.png) no-repeat;
-    background-size: 100% auto;
+    background-size: 100%;
     overflow: hidden;
 }
 
@@ -79,7 +79,7 @@ img.astronaut{
 }
 
 .endWords{
-    position: fixed;
+    /*position: fixed;*/
     width: 100%;
     top: 55%;
 }
@@ -94,7 +94,7 @@ img.astronaut{
     position: absolute;
     width: 70%;
     height: 100px;
-    top: 23%;
+    top: 61%;
     left: 14%;
     font-family: HKHB;
     font-size: 4.3vw;

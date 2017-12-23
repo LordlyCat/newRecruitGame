@@ -13,12 +13,12 @@ module.exports = {
     },
     devtool: 'inline-source-map',
     devServer: {
-        contentBase: './dist',
+        contentBase: './dists',
         port: 5566 //,
         //hot: false
     },
     plugins: [
-        //new CleanWebpackPlugin(['dist']),
+        //new CleanWebpackPlugin(['dists']),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'common',
             chunks: ['common', 'index', 'count', 'play']
@@ -78,10 +78,11 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin()
     ],
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'dists'),
         filename: 'js/[name].bundle.js',
         chunkFilename: 'js/[id].chunk.js',
-        publicPath: '/'
+        //publicPath: '/'
+        publicPath: 'http://wx.yyeke.com/171215game/dists/'
     },
 
     module: {

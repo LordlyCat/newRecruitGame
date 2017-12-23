@@ -6,14 +6,14 @@ setTimeout(function() {
     UFO.className = 'movingUFO';
 }, 500);
 
-UFO.style.top = '-300%';
+UFO.style.top = '-330%';
 readyWords.style.opacity = '1';
 
 setInterval(function() {
-    if (UFO.style.top === '-300%') {
-        UFO.style.top = '-315%';
-    } else if (UFO.style.top === '-315%') {
-        UFO.style.top = '-300%';
+    if (UFO.style.top === '-330%') {
+        UFO.style.top = '-345%';
+    } else if (UFO.style.top === '-345%') {
+        UFO.style.top = '-330%';
     }
 
     if (readyWords.style.opacity === '1') {

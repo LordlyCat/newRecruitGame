@@ -8,7 +8,7 @@ body{
     position: relative;
     background: url(../img/background.png) no-repeat;
     background-size: 100% auto;
-    background-position: 0 10%;
+    background-position: 0 0%;
 }
 
 .mainBody{
@@ -37,7 +37,7 @@ body{
 
 .readyWords{
     width: 70%;
-    margin-top: 96%;
+    margin-top: 99%;
     margin-left: 16%;
     transition: opacity 1.5s;
 }
@@ -49,8 +49,8 @@ body{
 .btnWrapper{
     position: relative;
     width: 50%;
-    margin-left: 25%;
-    margin-top: 5%;
+    margin-left: 26%;
+    margin-top: 7%;
 }
 
 .btnWrapper img.order{
@@ -90,19 +90,26 @@ body{
 
 .btnWrapper img.smallBtn{
     position: absolute;
-    width: 40%;
-    margin-top: 26%;
-    left: 30%;
+    width: 45.6%;
+    margin-top: 24%;
+    left: 26.2%;
 }
 
 .btnWrapper img.pressSmallBtn{
     position: absolute;
-    width: 35%;
-    margin-top: 32%;
-    left: 32%;
+    width: 42%;
+    margin-top: 28%;
+    left: 28%;
 }
 
-
+.cover{
+    width: 100%;
+    position: absolute;
+    top: -450%;
+    left: 0;
+    background: pink;
+    opacity: 0.6;
+}
 
 
 

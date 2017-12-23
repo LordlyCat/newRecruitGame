@@ -94,7 +94,7 @@ setInterval(function() {
 
 playBtn.addEventListener('touchstart', clickSend, false);
 
-var url = 'https://wx.idsbllp.cn/gavagame/game2017/user/click' + window.location.search;
+var url = 'http://wx.yyeke.com/171215game/user/click' + window.location.search;
 
 var ten = 0;
 
@@ -128,8 +128,9 @@ function send() {
     });
 }
 
-
-
+// setInterval(function () {
+//     window.scrollTo(0,document.body.scrollHeight);
+// }, 1);
 
 
 

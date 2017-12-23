@@ -86,19 +86,21 @@ setInterval(function() {
 //button
 var backBtn = document.querySelector('.yellowBtn');
 
-backBtn.addEventListener('click', function() {
-    // width: 86%;
-    // margin-top: -39%;
-    // margin-left: 6%;
-    backBtn.className = 'pressBtn';
-    setTimeout(function() {
-        backBtn.className = 'yellowBtn';
-    }, 200);
-    setTimeout(function() {
-        window.location.href = '../view/index.html' + window.location.search;
-    }, 300);
+window.onload = function() {
+    backBtn.addEventListener('click', function() {
+        // width: 86%;
+        // margin-top: -39%;
+        // margin-left: 6%;
+        backBtn.className = 'pressBtn';
+        setTimeout(function() {
+            backBtn.className = 'yellowBtn';
+        }, 200);
+        setTimeout(function() {
+            window.location.href = '../view/index.html' + window.location.search;
+        }, 2500);
 
-}, false);
+    }, false);
+}
 
 
 // ajax({
